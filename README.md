@@ -23,6 +23,10 @@ The current sign-in option is ChatGPT. Public browsing is anonymous; personal bo
 
 Blue-and-white branding follows the operator’s supplied logo. The mobile home screen exposes the booking controls immediately. A persistent bottom navigation connects booking, history and WhatsApp help. Accessible form labels, visible focus states, clear errors and responsive layouts support use on small screens.
 
+## Published route timetable
+
+The route detail view carries Boriza’s operational hand-off points so customers can plan the full journey. Morning service leaves Windhoek at 05:30, reaches Okahandja at 07:30, Karibib at 09:00, Usakos at 09:30 and Arandis at 10:30, then arrives in Swakopmund at 11:00 and Walvis Bay at 12:30. The return service leaves Walvis Bay at 13:00, Swakopmund at 14:00, Arandis at 15:00, Usakos at 16:00 and Karibib at 16:45, arriving in Windhoek at 19:30.
+
 ## Engineering
 
 React and TypeScript provide the interface. A server-side API runs on Cloudflare Workers with D1 persistence. Booking and capacity validation happen together in one database statement. Idempotency keys prevent repeated taps from creating duplicate bookings, and version checks reject stale edits. All money is stored in integer cents; the browser cannot choose the total.
