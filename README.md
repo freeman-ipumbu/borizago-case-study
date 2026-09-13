@@ -22,11 +22,20 @@ The responsive website and installed progressive web app share one Cloudflare-ho
 2. Select a published trip with live seat availability and passenger fares.
 3. Add named Adult, Pensioner, Student and Child passengers.
 4. Provide contact and pickup details, with a direct WhatsApp location hand-off.
-5. Review the server-calculated total and the no-refund cancellation policy.
-6. Choose EFT or office payment, confirm the booking and receive a unique reference.
-7. Share the confirmation through WhatsApp and revisit it under **My bookings**.
+5. Review the route, passengers, pickup, server-calculated total and cancellation policy.
+6. Confirm the details and actively accept the Terms & Conditions, including luggage, safety and no-refund safeguards.
+7. Choose EFT or office payment, confirm the booking and receive a unique reference.
+8. Share the confirmation through WhatsApp and revisit it under **My bookings**.
 
 The installed app detects standalone mode and removes its own install prompt. The booking flow uses a private first-party customer identifier, with no dependency on ChatGPT authentication or hosting.
+
+## Support and travel resources
+
+WhatsApp help is available throughout the journey at **+264 85 772 4329**, with **+264 81 731 4947** available for calls. The footer and home support panel also connect customers to [Boriza on Facebook](https://www.facebook.com/share/14qinXBbi7H/).
+
+Customers can keep the [payment notice](https://borizashuttles.pages.dev/payment-notice.jpeg) and [bus-rules poster](https://borizashuttles.pages.dev/bus-rules.jpeg) on their phone. The booking flow explains EFT, wallet proof-of-payment and office payment, while the safety poster covers the practical onboard rules and luggage guidance.
+
+The review screen requires two deliberate confirmations before submission: the customer verifies the passenger, contact and pickup details, then accepts the Terms & Conditions. The acceptance timestamp and terms version are recorded with the booking. The terms explain that customer cancellations are non-refundable because a released seat may remain vacant, subject to rights that cannot lawfully be excluded; if Boriza cancels or cannot provide the trip, the available remedy is handled according to the terms and applicable law. They also cover the supplied allowance of two medium bags or one big bag per passenger, extra luggage charges, valuables, prohibited items, pickup timing and passenger conduct.
 
 ## Timetable and route model
 
