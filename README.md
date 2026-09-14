@@ -4,7 +4,7 @@ An installable shuttle-booking web app for **Boriza Shuttle & Tours** in Namibia
 
 [**Open the live app →**](https://borizashuttles.pages.dev/)
 
-![Borizago desktop booking experience](assets/borizago-desktop.jpg)
+![Borizago desktop booking experience](assets/borizago-desktop-2026.png)
 
 <p align="center">
   <img src="assets/borizago-mobile.jpg" width="390" alt="Borizago mobile booking experience">
@@ -25,7 +25,11 @@ The responsive website and installed progressive web app share one Cloudflare-ho
 5. Review the route, passengers, pickup, server-calculated total and cancellation policy.
 6. Confirm the details and actively accept the Terms & Conditions, including luggage, safety and no-refund safeguards.
 7. Choose EFT or office payment, confirm the booking and receive a unique reference.
-8. Share the confirmation through WhatsApp and revisit it under **My bookings**.
+8. Share the confirmation through WhatsApp and revisit it under **My journeys**.
+
+Customers can also request tours, airport transfers, private transfers and parcel transport. Those forms capture the journey, contact, luggage, flight or recipient details Boriza needs for a personal quote.
+
+![Borizago service request experience](assets/borizago-services-2026.png)
 
 The installed app detects standalone mode and removes its own install prompt. The booking flow uses a private first-party customer identifier, with no dependency on ChatGPT authentication or hosting.
 
@@ -57,12 +61,15 @@ Boriza staff use a private, signed server session to manage the service. The das
 - edit, confirm or cancel bookings;
 - mark payments pending or paid;
 - inspect passenger manifests and remaining seats.
+- review a persistent inbox for new bookings and service requests;
+- prepare service quotes and update their operational/payment status;
+- open prefilled WhatsApp or email confirmations for the customer.
 
 No password is stored in the repository or browser bundle. Production credentials live in encrypted Cloudflare Pages secrets.
 
 ## Engineering
 
-React, TypeScript and a server-side API run on Cloudflare Pages. Cloudflare D1 stores routes, trips and bookings. Booking creation validates the selected segment, recalculates the fare on the server and reserves capacity atomically. Idempotency keys prevent repeated taps from creating duplicate records, while revision checks reject stale trip and admin edits.
+React, TypeScript and a server-side API run on Cloudflare Pages. Cloudflare D1 stores routes, trips, bookings, service requests and admin notifications. Booking creation validates the selected segment, recalculates the fare on the server and reserves capacity atomically. Idempotency keys prevent repeated taps from creating duplicate records, while revision checks reject stale trip and admin edits.
 
 ```mermaid
 flowchart LR
@@ -85,9 +92,9 @@ Payment-pending bookings consume seats. Cancellation releases them. The service 
 - Content-hashed frontend assets cached immutably; dynamic responses remain uncached.
 - Mobile layouts verified at 390 px with no horizontal overflow.
 
-## V1 boundaries
+## Current boundaries
 
-Tours, airport transfers, private transfers, parcels, live tracking, card payments and automatic messaging remain outside this release. The route, trip and booking structure leaves room to add them later without replacing the core system.
+Tours, airport transfers, private transfers and parcels now have complete request and staff-management flows. Live GPS tracking, card payments and fully automatic outbound email or WhatsApp remain external integrations. Staff can send a prepared confirmation in one tap today; Zoho mail, Meta WhatsApp Business and a payment merchant can be connected later without replacing the core system.
 
 ## Repository boundary
 
