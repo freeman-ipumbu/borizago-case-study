@@ -16,6 +16,8 @@ Borizago turns a WhatsApp-led booking process into a fast, guided journey that w
 
 The responsive website and installed progressive web app share one Cloudflare-hosted booking system, so seat counts, fares, schedules and payment state stay consistent everywhere.
 
+On phones, the header keeps the Borizago wordmark and a compact **Request service** action visible without crowding the viewport, while the persistent bottom navigation provides direct access to shuttles, services, journeys and help.
+
 ## Customer journey
 
 1. Choose the departure town, destination and date.
@@ -92,7 +94,7 @@ Payment-pending bookings consume seats. Cancellation releases them. The service 
 - Server-owned totals and atomic capacity enforcement.
 - No passenger data, credentials, banking details or database exports in this repository.
 - Content-hashed frontend assets cached immutably; dynamic responses remain uncached.
-- Mobile layouts verified at 390 px with no horizontal overflow.
+- Mobile layouts verified at 320 px and 390 px with no horizontal overflow or header overlap.
 
 ## Current boundaries
 
