@@ -54,7 +54,7 @@ The public timetable reflects Boriza’s supplied operating times:
 
 The route engine expands these corridors into 42 valid town-to-town combinations while preventing reverse or identical-location selections. Every segment uses the same underlying vehicle record, so a seat booked from an intermediate stop still reduces the shared vehicle capacity.
 
-For journeys beginning in Walvis Bay, the supplied per-person fares are N$150 to Swakopmund, N$150 to Arandis, N$270 to Usakos, N$270 to Karibib, N$150 to Okahandja and N$300 to Windhoek. The booking API owns this fare matrix and recalculates the total before reserving a seat. The corresponding drop-off points are Swakopmund; Arandis service station; Shell Service Station in Usakos; Agra Service Station in Karibib; Wumpi Service Station / Shell Service Station in Okahandja; and home drop-off in Windhoek.
+For journeys beginning in Walvis Bay, the supplied per-person fares are N$150 to Swakopmund, N$150 to Arandis, N$270 to Usakos, N$270 to Karibib, N$150 to Okahandja and N$300 to Windhoek. Arandis–Usakos is N$270 per person in both directions. The booking API owns this fare matrix and recalculates the total before reserving a seat. The corresponding Walvis Bay drop-off points are Swakopmund; Arandis service station; Shell Service Station in Usakos; Agra Service Station in Karibib; Wumpi Service Station / Shell Service Station in Okahandja; and home drop-off in Windhoek.
 
 ## Operations dashboard
 
