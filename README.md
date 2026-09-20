@@ -77,6 +77,8 @@ Boriza staff use a private, signed server session to manage the service. The das
 
 No password is stored in the repository or browser bundle. Production credentials live in encrypted Cloudflare Pages secrets.
 
+The [Borizago Staff Guide PDF](https://borizashuttles.pages.dev/borizago-staff-guide.pdf) is deliberately public-safe: it demonstrates the operations flow without exposing passwords, customer records, payment proof or private credentials.
+
 ## Engineering
 
 React, TypeScript and a server-side API run on Cloudflare Pages. Cloudflare D1 stores routes, trips, bookings, service requests and admin notifications. Booking creation validates the selected segment, recalculates the fare on the server and reserves capacity atomically. Idempotency keys prevent repeated taps from creating duplicate records, while revision checks reject stale trip and admin edits.
@@ -104,7 +106,7 @@ Payment-pending bookings consume seats. Cancellation releases them. The service 
 
 ## Current boundaries
 
-Tours, airport transfers, private transfers and parcels now have complete request and staff-management flows. Live GPS tracking, card payments and fully automatic outbound email or WhatsApp remain external integrations. Staff can send a prepared confirmation in one tap today; Zoho mail, Meta WhatsApp Business and a payment merchant can be connected later without replacing the core system.
+Tours, airport transfers, private transfers and parcels now have complete request and staff-management flows. The admin Reports workspace provides monthly revenue, payment, trip and route summaries plus downloadable booking, customer and financial CSV ledgers. Customer phone numbers are enforced as exactly 10 digits at the browser and API boundary, while dates and times use explicit validated fields. Live GPS tracking, card payments and fully automatic outbound email or WhatsApp remain external integrations. Staff can send a prepared confirmation in one tap today; Zoho mail, Meta WhatsApp Business and a payment merchant can be connected later without replacing the core system.
 
 ## Repository boundary
 
