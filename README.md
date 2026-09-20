@@ -50,9 +50,11 @@ The review screen requires two deliberate confirmations before submission: the c
 The public timetable reflects Boriza’s supplied operating times:
 
 - Morning: Windhoek 05:30 → Okahandja 07:30 → Karibib 09:00 → Usakos 09:30 → Arandis 10:30 → Swakopmund 11:00 → Walvis Bay 12:30.
-- Afternoon: Walvis Bay 13:00 → Swakopmund 14:00 → Arandis 15:00 → Usakos 16:00 → Karibib 16:45 → Windhoek 19:30.
+- Afternoon: Walvis Bay 13:00 → Swakopmund 14:00 → Arandis 15:00 → Usakos 16:00 → Karibib 16:45 → Okahandja 18:00 → Windhoek 19:30.
 
-The route engine expands these corridors into 36 valid town-to-town combinations while preventing reverse or identical-location selections. Every segment uses the same underlying vehicle record, so a seat booked from an intermediate stop still reduces the shared vehicle capacity.
+The route engine expands these corridors into 42 valid town-to-town combinations while preventing reverse or identical-location selections. Every segment uses the same underlying vehicle record, so a seat booked from an intermediate stop still reduces the shared vehicle capacity.
+
+For journeys beginning in Walvis Bay, the supplied per-person fares are N$150 to Swakopmund, N$150 to Arandis, N$270 to Usakos, N$270 to Karibib, N$150 to Okahandja and N$300 to Windhoek. The booking API owns this fare matrix and recalculates the total before reserving a seat. The corresponding drop-off points are Swakopmund; Arandis service station; Shell Service Station in Usakos; Agra Service Station in Karibib; Wumpi Service Station / Shell Service Station in Okahandja; and home drop-off in Windhoek.
 
 ## Operations dashboard
 
