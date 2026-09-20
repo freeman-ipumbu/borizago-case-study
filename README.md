@@ -23,8 +23,8 @@ On phones, the header keeps the Borizago wordmark and a compact **Request servic
 1. Choose the departure town, destination and date.
 2. Select a published trip with live seat availability and passenger fares.
 3. Add named Adult, Pensioner, Student and Child passengers.
-4. Provide contact and pickup details, with a direct WhatsApp location hand-off.
-5. Review the route, passengers, pickup, server-calculated total and cancellation policy.
+4. Choose a configured pickup and drop-off point, then provide contact details.
+5. Review the route, passengers, both locations, server-calculated total and cancellation policy.
 6. Confirm the details and actively accept the Terms & Conditions, including luggage, safety and no-refund safeguards.
 7. Choose EFT or office payment, confirm the booking and receive a unique reference.
 8. Share the confirmation through WhatsApp and revisit it under **My journeys**.
@@ -37,7 +37,7 @@ The installed app detects standalone mode and removes its own install prompt. Th
 
 ## Support and travel resources
 
-WhatsApp help is available throughout the journey at **+264 85 772 4329**, with **+264 81 731 4947** available for calls. The footer and home support panel also connect customers to [Boriza on Facebook](https://www.facebook.com/share/14qinXBbi7H/).
+The public [Help & FAQ](https://borizashuttles.pages.dev/help) explains booking, payment, changes, service requests and pickup/drop-off points in plain language. WhatsApp help is available throughout the journey at **+264 85 772 4329**, with **+264 81 731 4947** available for calls. The footer and home support panel also connect customers to [Boriza on Facebook](https://www.facebook.com/share/14qinXBbi7H/).
 
 Customers can keep the [payment notice](https://borizashuttles.pages.dev/payment-notice.jpeg), [bus-rules poster](https://borizashuttles.pages.dev/bus-rules.jpeg), [daily shuttle fare guide](https://borizashuttles.pages.dev/boriza-daily-shuttle-fares.jpeg), [parcel policy](https://borizashuttles.pages.dev/boriza-parcel-policy.jpeg), [Hosea Kutako–Windhoek transfer guide](https://borizashuttles.pages.dev/boriza-airport-windhoek-transfer.jpeg) and [Hosea Kutako–coast transfer guide](https://borizashuttles.pages.dev/boriza-airport-coast-transfer.jpeg) on their phone. Every poster opens at its natural proportions and can be downloaded directly. The booking flow explains EFT, wallet proof-of-payment and office payment, while the safety and parcel notices cover the practical onboard, luggage, cutoff and restricted-item guidance.
 
@@ -70,6 +70,10 @@ Boriza staff use a private, signed server session to manage the service. The das
 - review a persistent inbox for new bookings and service requests;
 - prepare service quotes and update their operational/payment status;
 - open prefilled WhatsApp or email confirmations for the customer.
+- manage directional Adult, Pensioner, Student and Child fares without a code release;
+- add, default, order or disable multiple pickup and drop-off points per town;
+- review friendly non-blocking warnings for fare gaps, missing drop-offs and possible same-day duplicate departures;
+- follow a plain-language Help centre designed for Boriza and future staff.
 
 No password is stored in the repository or browser bundle. Production credentials live in encrypted Cloudflare Pages secrets.
 
