@@ -2,6 +2,8 @@
 
 An installable shuttle-booking web app for **Boriza Shuttle & Tours** in Namibia.
 
+Designed and engineered by [SolarSpin Technologies](https://freeman-ipumbu.pages.dev/).
+
 [**Open the live app →**](https://borizashuttles.pages.dev/)
 
 ![Borizago desktop booking experience](assets/borizago-desktop-2026.png)
