@@ -20,6 +20,12 @@ The responsive website and installed progressive web app share one Cloudflare-ho
 
 On phones, the header keeps the Borizago wordmark and a compact **Request service** action visible without crowding the viewport, while the persistent bottom navigation provides direct access to shuttles, services, journeys and help.
 
+## Brand refinement
+
+The visual update improves Boriza’s existing identity instead of replacing it. The navy-and-white shuttle badge, route arcs and **BST** initials remain recognisable, while a new full-bleed square app icon stays legible in browser tabs, home-screen tiles, dashboard notifications and the compact mobile header. The fuller heritage badge remains the public-facing artwork on the booking page.
+
+The home page also includes a reusable 9:16 **Boriza status pack** for WhatsApp and Facebook: a daily shuttle reminder, a seats-available post and a services overview. Each graphic can be opened or downloaded at full resolution. These are marketing templates only; schedules, availability and prices still come from the live system and staff-controlled records.
+
 ## Customer journey
 
 1. Choose the departure town, destination and date.
