@@ -91,6 +91,8 @@ The [Borizago Staff Guide PDF](https://borizashuttles.pages.dev/borizago-staff-g
 
 React, TypeScript and a server-side API run on Cloudflare Pages. Cloudflare D1 stores routes, trips, bookings, service requests and admin notifications. Booking creation validates the selected segment, recalculates the fare on the server and reserves capacity atomically. Idempotency keys prevent repeated taps from creating duplicate records, while revision checks reject stale trip and admin edits.
 
+Production now follows the same release path as the other SolarSpin projects: changes land on the private application's GitHub `main` branch, Cloudflare Pages builds a reproducible deployment package, and a successful build is promoted automatically to the existing Borizago project. The D1 binding and encrypted admin secrets remain in Cloudflare; neither the private application source nor those credentials are copied into this public case-study repository.
+
 ```mermaid
 flowchart LR
   A[Browser or installed PWA] --> B[Cloudflare Pages app]
