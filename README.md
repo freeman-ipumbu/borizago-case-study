@@ -31,13 +31,15 @@ The home page also includes a reusable 9:16 **Boriza status pack** for WhatsApp 
 1. Choose the departure town, destination and date.
 2. Select a published trip with live seat availability and passenger fares.
 3. Add named Adult, Pensioner, Student and Child passengers.
-4. Choose a configured pickup and drop-off point, then provide contact details.
-5. Review the route, passengers, both locations, server-calculated total and cancellation policy.
-6. Confirm the details and actively accept the Terms & Conditions, including luggage, safety and no-refund safeguards.
-7. Choose EFT or office payment, confirm the booking and receive a unique reference.
-8. Share the confirmation through WhatsApp and revisit it under **My journeys**.
+4. Choose Boriza's operational pickup/drop-off zones, then enter the exact street, erf, building, gate or landmark for both ends.
+5. Use a deliberate Namibia-only address search for precise street/place suggestions, or add a one-tap GPS pin. The written description remains required and editable.
+6. Provide a primary mobile number plus a named alternative/emergency contact with a different required 10-digit number.
+7. Review the route, passengers, both exact locations, map links, server-calculated total and cancellation policy.
+8. Confirm the details and actively accept the Terms & Conditions, including luggage, safety and no-refund safeguards.
+9. Choose EFT or office payment, confirm the booking and receive a unique reference.
+10. Share the confirmation through WhatsApp and revisit it under **My journeys**.
 
-Customers can also request tours, airport transfers, private transfers and parcel transport. Those forms capture the journey, contact, luggage, flight or recipient details Boriza needs for a personal quote.
+Customers can also request tours, airport transfers, private transfers and parcel transport. Those forms use the same hardened address/map and two-contact onboarding, then capture the luggage, flight or recipient details Boriza needs for a personal quote.
 
 ![Borizago service request experience](assets/borizago-services-2026.png)
 
@@ -75,6 +77,8 @@ Boriza staff use a private, signed server session to manage the service. The das
 - edit, confirm or cancel bookings;
 - mark payments pending or paid;
 - inspect passenger manifests and remaining seats.
+- view both required phone numbers, exact written pickup/drop-off details and map links on each manifest;
+- copy a WhatsApp-ready plain-text manifest in one tap, download it as CSV or print a clean operational copy;
 - review a persistent inbox for new bookings and service requests;
 - prepare service quotes and update their operational/payment status;
 - open prefilled WhatsApp or email confirmations for the customer.
@@ -89,7 +93,9 @@ The [Borizago Staff Guide PDF](https://borizashuttles.pages.dev/borizago-staff-g
 
 ## Engineering
 
-React, TypeScript and a server-side API run on Cloudflare Pages. Cloudflare D1 stores routes, trips, bookings, service requests and admin notifications. Booking creation validates the selected segment, recalculates the fare on the server and reserves capacity atomically. Idempotency keys prevent repeated taps from creating duplicate records, while revision checks reject stale trip and admin edits.
+React, TypeScript and a server-side API run on Cloudflare Pages. Cloudflare D1 stores routes, trips, bookings, exact address snapshots, optional coordinates, service requests and admin notifications. Booking creation validates the selected segment, two distinct 10-digit contacts and both written locations, recalculates the fare on the server and reserves capacity atomically. Idempotency keys prevent repeated taps from creating duplicate records, while revision checks reject stale trip and admin edits.
+
+Smart location support is deliberately customer-controlled: admin-approved meeting points appear immediately, address lookup runs only after the customer presses **Find this address**, and GPS runs only after **Use my current location**. Results are restricted to Namibia, attributed to OpenStreetMap, cached, and globally rate-limited; no background keystroke tracking or continuous location tracking is used.
 
 Production now follows the same release path as the other SolarSpin projects: changes land on the private application's GitHub `main` branch, Cloudflare Pages builds a reproducible deployment package, and a successful build is promoted automatically to the existing Borizago project. The D1 binding and encrypted admin secrets remain in Cloudflare; neither the private application source nor those credentials are copied into this public case-study repository.
 
@@ -110,13 +116,15 @@ Payment-pending bookings consume seats. Cancellation releases them. The service 
 - Constant-time password comparison and server-side email allowlist.
 - Caller-supplied identity headers stripped at the Cloudflare edge.
 - Server-owned totals and atomic capacity enforcement.
+- Server-side validation requires exact pickup/drop-off descriptions, a named alternative/emergency contact and a second phone number different from the primary number.
+- Address lookup is explicit rather than background autocomplete; coordinates are stored only when the customer chooses to pin a location.
 - No passenger data, credentials, banking details or database exports in this repository.
 - Content-hashed frontend assets cached immutably; dynamic responses remain uncached.
 - Mobile layouts verified at 320 px and 390 px with no horizontal overflow or header overlap.
 
 ## Current boundaries
 
-Tours, airport transfers, private transfers and parcels now have complete request and staff-management flows. The admin Reports workspace provides monthly revenue, payment, trip and route summaries plus downloadable booking, customer and financial CSV ledgers. Customer phone numbers are enforced as exactly 10 digits at the browser and API boundary, while dates and times use explicit validated fields. Live GPS tracking, card payments and fully automatic outbound email or WhatsApp remain external integrations. Staff can send a prepared confirmation in one tap today; Zoho mail, Meta WhatsApp Business and a payment merchant can be connected later without replacing the core system.
+Tours, airport transfers, private transfers and parcels now have complete request and staff-management flows. The admin Reports workspace provides monthly revenue, payment, trip and route summaries plus downloadable booking, customer and financial CSV ledgers. Customer phone numbers are enforced as exactly 10 digits at the browser and API boundary, two distinct numbers are required for every new request, and dates/times use explicit validated fields. Borizago captures customer-selected pickup/drop-off pins but does not continuously track people or vehicles. Card payments and fully automatic outbound email or WhatsApp remain external integrations. Staff can copy a complete manifest straight into a WhatsApp group and open prepared customer confirmations today; Zoho mail, Meta WhatsApp Business and a payment merchant can be connected later without replacing the core system.
 
 ## Repository boundary
 
