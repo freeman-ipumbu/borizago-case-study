@@ -2,7 +2,7 @@
 
 An installable shuttle-booking web app for **Boriza Shuttle & Tours** in Namibia.
 
-A Digital Experience by [SolarSpin Technologies](https://freeman-ipumbu.pages.dev/).
+A Digital Experience by [SolarSpin Technologies](https://solarspin-namibia.pages.dev/).
 
 [**Open the live app →**](https://borizashuttles.pages.dev/)
 
