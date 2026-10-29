@@ -2,7 +2,7 @@
 
 An installable shuttle-booking web app for **Boriza Shuttle & Tours** in Namibia.
 
-A Digital Experience by [SolarSpin Technologies](https://solarspin-namibia.pages.dev/).
+A Digital Experience by [SolarSpin Technologies](https://www.solarspin-namibia.xyz/).
 
 [**Open the live app →**](https://borizashuttles.pages.dev/)
 
@@ -129,3 +129,7 @@ Tours, airport transfers, private transfers and parcels now have complete reques
 ## Repository boundary
 
 This public repository contains case-study material only. Application source is maintained in a private repository. Brand assets belong to Boriza Shuttle & Tours.
+
+---
+
+Designed and engineered by [SolarSpin Technologies](https://www.solarspin-namibia.xyz/) for Boriza Shuttle & Tours.
