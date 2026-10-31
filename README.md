@@ -37,7 +37,7 @@ The home page also includes a reusable 9:16 **Boriza status pack** for WhatsApp 
 7. Review the route, passengers, both exact locations, map links, server-calculated total and cancellation policy.
 8. Confirm the details and actively accept the Terms & Conditions, including luggage, safety and no-refund safeguards.
 9. Choose EFT or office payment, confirm the booking and receive a unique reference.
-10. Share the confirmation through WhatsApp and revisit it under **My journeys**.
+10. Share the confirmation through WhatsApp, open the pickup or full driving route in Google Maps, add the Namibia-time trip to a calendar, and revisit it under **My journeys**.
 
 Customers can also request tours, airport transfers, private transfers and parcel transport. Those forms use the same hardened address/map and two-contact onboarding, then capture the luggage, flight or recipient details Boriza needs for a personal quote.
 
@@ -97,7 +97,9 @@ React, TypeScript and a server-side API run on Cloudflare Pages. Cloudflare D1 s
 
 Smart location support is deliberately customer-controlled: admin-approved meeting points appear immediately, address lookup runs only after the customer presses **Find this address**, and GPS runs only after **Use my current location**. Results are restricted to Namibia, attributed to OpenStreetMap, cached, and globally rate-limited; no background keystroke tracking or continuous location tracking is used.
 
-Production now follows the same release path as the other SolarSpin projects: changes land on the private application's GitHub `main` branch, Cloudflare Pages builds a reproducible deployment package, and a successful build is promoted automatically to the existing Borizago project. The D1 binding and encrypted admin secrets remain in Cloudflare; neither the private application source nor those credentials are copied into this public case-study repository.
+Confirmed shuttle bookings include credential-free Google Maps links for the pickup point and complete driving route, plus a downloadable calendar event in Namibia time with a 24-hour reminder. Optional GA4 funnel measurement excludes names, phone numbers, exact addresses and booking references. Google Wallet support is implemented behind server-side credentials and stays hidden until Boriza's issuer and Generic Pass class are configured.
+
+Production has one release path: changes land on the private application's GitHub `main` branch, Cloudflare Pages builds a reproducible deployment package, and a successful build is promoted automatically to the existing Borizago project at `borizashuttles.pages.dev`. ChatGPT Sites is not part of the hosting or release architecture. The D1 binding and encrypted admin secrets remain in Cloudflare; neither the private application source nor those credentials are copied into this public case-study repository.
 
 ```mermaid
 flowchart LR
@@ -124,7 +126,7 @@ Payment-pending bookings consume seats. Cancellation releases them. The service 
 
 ## Current boundaries
 
-Tours, airport transfers, private transfers and parcels now have complete request and staff-management flows. The admin Reports workspace provides monthly revenue, payment, trip and route summaries plus downloadable booking, customer and financial CSV ledgers. Customer phone numbers are enforced as exactly 10 digits at the browser and API boundary, two distinct numbers are required for every new request, and dates/times use explicit validated fields. Borizago captures customer-selected pickup/drop-off pins but does not continuously track people or vehicles. Card payments and fully automatic outbound email or WhatsApp remain external integrations. Staff can copy a complete manifest straight into a WhatsApp group and open prepared customer confirmations today; Zoho mail, Meta WhatsApp Business and a payment merchant can be connected later without replacing the core system.
+Tours, airport transfers, private transfers and parcels now have complete request and staff-management flows. The admin Reports workspace provides monthly revenue, payment, trip and route summaries plus downloadable booking, customer and financial CSV ledgers. Customer phone numbers are enforced as exactly 10 digits at the browser and API boundary, two distinct numbers are required for every new request, and dates/times use explicit validated fields. Borizago captures customer-selected pickup/drop-off pins but does not continuously track people or vehicles. Google Maps and calendar tools are live; Google Wallet remains credential-gated and hidden. Card payments and fully automatic outbound email or WhatsApp remain external integrations. Staff can copy a complete manifest straight into a WhatsApp group and open prepared customer confirmations today; Zoho mail, Meta WhatsApp Business and a payment merchant can be connected later without replacing the core system.
 
 ## Repository boundary
 

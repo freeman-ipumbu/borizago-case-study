@@ -24,4 +24,11 @@ Amber notices are friendly checks, not errors. They identify prices still using 
 - Do not share staff passwords, customer ID numbers or admin screenshots publicly.
 - Use the dashboard's **Help** tab for the full step-by-step guide.
 
+## Customer journey tools
+
+- A confirmed shuttle booking gives the customer Google Maps links for the pickup point and complete driving route.
+- The customer can download a Namibia-time calendar event with a 24-hour reminder.
+- Google Wallet is intentionally hidden until Boriza's Wallet issuer credentials are configured on the server.
+- These tools never replace the written pickup instructions. Staff should still verify the address, landmark and contact numbers before departure.
+
 Customers can use the public [Help & FAQ](https://borizashuttles.pages.dev/help) or contact Boriza directly.
